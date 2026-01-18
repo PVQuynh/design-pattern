@@ -2,7 +2,7 @@
 
 Tài liệu toàn diện về các Design Patterns trong Java, bao gồm lý thuyết, khái niệm, và hướng dẫn áp dụng.
 
-## 📖 Mục lục
+## Mục lục
 
 1. [Giới thiệu Design Patterns](#giới-thiệu-design-patterns)
 2. [Phân loại Design Patterns](#phân-loại-design-patterns)
@@ -24,40 +24,110 @@ Tài liệu toàn diện về các Design Patterns trong Java, bao gồm lý thu
 
 ### Khái niệm cơ bản
 
-Design Patterns cung cấp các giải pháp có thể tái sử dụng cho các vấn đề thiết kế phần mềm phổ biến. Chúng giúp các nhà phát triển viết code sạch hơn, dễ bảo trì và có thể mở rộng.
+Design Patterns là các giải pháp có thể tái sử dụng cho các vấn đề thiết kế phần mềm phổ biến. Chúng không phải là code cụ thể mà là các template hoặc mô tả cách giải quyết một vấn đề có thể áp dụng trong nhiều tình huống khác nhau.
+
+Tại sao cần Design Patterns? Khi phát triển phần mềm, các developers thường gặp phải các vấn đề tương tự nhau. Thay vì phát minh lại giải pháp mỗi lần, Design Patterns cung cấp các giải pháp đã được kiểm chứng, giúp tiết kiệm thời gian và đảm bảo chất lượng code.
+
+Design Patterns giúp các nhà phát triển viết code sạch hơn, dễ bảo trì và có thể mở rộng bằng cách:
+- Cung cấp cấu trúc rõ ràng cho việc giải quyết vấn đề
+- Tăng tính linh hoạt và khả năng tái sử dụng của code
+- Giảm sự phụ thuộc giữa các thành phần
+- Cải thiện khả năng giao tiếp giữa các developers
 
 ### Đặc điểm chính
 
-- **Reusable Solutions**: Giải pháp đã được kiểm chứng cho các vấn đề thường gặp
-- **Best Practices**: Tập hợp các thực hành tốt nhất trong ngành
-- **Common Vocabulary**: Ngôn ngữ chung để giao tiếp giữa các developers
-- **Proven Solutions**: Đã được test và sử dụng rộng rãi trong thực tế
+**Reusable Solutions (Giải pháp tái sử dụng)**: Design Patterns cung cấp các giải pháp đã được kiểm chứng cho các vấn đề thường gặp. Thay vì phải suy nghĩ lại từ đầu, developers có thể áp dụng pattern phù hợp. Ví dụ, khi cần đảm bảo chỉ có một instance của một class, Singleton Pattern đã cung cấp giải pháp sẵn có.
 
-### Lợi ích
+**Best Practices (Thực hành tốt nhất)**: Các pattern được phát triển dựa trên kinh nghiệm của nhiều developers và đã được sử dụng thành công trong nhiều dự án. Chúng đại diện cho các cách tiếp cận tốt nhất đã được chứng minh trong thực tế.
 
-- Giúp giải quyết các vấn đề thiết kế phần mềm phổ biến
-- Cải thiện khả năng tái sử dụng, đọc hiểu và bảo trì code
-- Cho phép loose coupling giữa các components trong ứng dụng lớn
-- Đơn giản hóa việc tạo đối tượng, giao tiếp và cấu trúc
-- Tăng cường khả năng mở rộng và hỗ trợ tăng trưởng hệ thống sạch
-- Cung cấp từ vựng chung cho developers để thảo luận về kiến trúc
-- Được sử dụng nhiều trong frameworks, libraries và các dự án enterprise-level
-- Giảm bugs bằng cách tuân theo các best practices đã được kiểm chứng
+**Common Vocabulary (Từ vựng chung)**: Design Patterns cung cấp ngôn ngữ chung để giao tiếp giữa các developers. Khi một developer nói "sử dụng Factory Pattern", các developer khác ngay lập tức hiểu ý định và cách triển khai. Điều này giúp giảm thời gian giải thích và tăng hiệu quả làm việc nhóm.
+
+**Proven Solutions (Giải pháp đã được chứng minh)**: Các pattern đã được test và sử dụng rộng rãi trong thực tế. Chúng không phải là lý thuyết suông mà là các giải pháp đã được áp dụng thành công trong nhiều hệ thống thực tế, từ các ứng dụng nhỏ đến các hệ thống enterprise lớn.
+
+### Lợi ích chi tiết
+
+**Giải quyết vấn đề thiết kế phổ biến**: Trong quá trình phát triển phần mềm, developers thường gặp các vấn đề tương tự như: làm thế nào để tạo đối tượng một cách linh hoạt, làm thế nào để giảm sự phụ thuộc giữa các components, làm thế nào để quản lý trạng thái của đối tượng. Design Patterns cung cấp giải pháp cho những vấn đề này.
+
+**Cải thiện khả năng tái sử dụng, đọc hiểu và bảo trì code**: Code sử dụng Design Patterns thường dễ đọc hơn vì nó tuân theo các cấu trúc quen thuộc. Khi một developer mới tham gia dự án, họ có thể nhanh chóng hiểu code nếu biết các pattern được sử dụng. Điều này cũng làm cho code dễ bảo trì hơn vì các thay đổi có thể được thực hiện theo cấu trúc pattern đã định.
+
+**Loose coupling giữa các components**: Loose coupling có nghĩa là các components ít phụ thuộc vào nhau. Điều này quan trọng vì nó cho phép thay đổi một component mà không ảnh hưởng đến các component khác. Nhiều Design Patterns, như Dependency Injection và Observer, giúp đạt được loose coupling.
+
+**Đơn giản hóa việc tạo đối tượng, giao tiếp và cấu trúc**: Creational Patterns đơn giản hóa việc tạo đối tượng bằng cách ẩn logic phức tạp. Structural Patterns giúp tổ chức code một cách rõ ràng. Behavioral Patterns đơn giản hóa cách các đối tượng giao tiếp với nhau.
+
+**Tăng cường khả năng mở rộng**: Code được thiết kế tốt với Design Patterns dễ dàng mở rộng. Ví dụ, Strategy Pattern cho phép thêm thuật toán mới mà không cần sửa code hiện có. Điều này tuân theo nguyên tắc Open/Closed Principle.
+
+**Từ vựng chung cho developers**: Khi developers sử dụng cùng một ngôn ngữ về Design Patterns, họ có thể giao tiếp hiệu quả hơn. Thay vì giải thích dài dòng về cách một hệ thống hoạt động, họ có thể nói "hệ thống sử dụng Observer Pattern" và mọi người đều hiểu.
+
+**Sử dụng trong frameworks và libraries**: Hầu hết các framework và library phổ biến đều sử dụng Design Patterns. Hiểu Design Patterns giúp developers hiểu cách các framework hoạt động và sử dụng chúng hiệu quả hơn. Ví dụ, Spring Framework sử dụng Dependency Injection, Factory Pattern, và nhiều pattern khác.
+
+**Giảm bugs**: Design Patterns đã được test kỹ lưỡng và sử dụng rộng rãi, nên chúng ít có lỗi hơn so với các giải pháp tự phát minh. Tuân theo các best practices đã được kiểm chứng giúp tránh các lỗi phổ biến.
 
 ---
 
 ## Phân loại Design Patterns
 
-Design Patterns được phân loại thành 3 nhóm chính theo mục đích sử dụng:
+Design Patterns được phân loại thành 3 nhóm chính theo mục đích sử dụng. Việc phân loại này giúp developers dễ dàng tìm và hiểu các pattern phù hợp với vấn đề họ đang gặp phải.
 
 ### 1. Creational Patterns (Nhóm tạo đối tượng)
-Tập trung vào cách tạo đối tượng một cách linh hoạt và hiệu quả. Giúp kiểm soát cách và thời điểm các đối tượng được khởi tạo.
+
+Creational Patterns tập trung vào cách tạo đối tượng một cách linh hoạt và hiệu quả. Chúng giúp kiểm soát cách và thời điểm các đối tượng được khởi tạo.
+
+Tại sao cần Creational Patterns? Trong lập trình hướng đối tượng, việc tạo đối tượng bằng cách sử dụng toán tử `new` trực tiếp có thể dẫn đến các vấn đề:
+- Code phụ thuộc vào class cụ thể, khó thay đổi
+- Logic tạo đối tượng phức tạp bị rải rác trong code
+- Khó test vì không thể mock hoặc thay thế đối tượng
+- Không thể kiểm soát số lượng instance được tạo
+
+Creational Patterns giải quyết các vấn đề này bằng cách:
+- Ẩn logic tạo đối tượng phức tạp
+- Cho phép tạo đối tượng mà không cần chỉ định class cụ thể
+- Cung cấp cách kiểm soát việc tạo và lifecycle của đối tượng
+- Tăng tính linh hoạt và khả năng tái sử dụng
+
+Các pattern trong nhóm này bao gồm: Singleton, Factory Method, Abstract Factory, Builder, Prototype, Object Pool, và Lazy Initialization.
 
 ### 2. Structural Patterns (Nhóm cấu trúc)
-Giải thích cách các class và object được kết hợp để tạo thành cấu trúc lớn hơn. Cải thiện tính linh hoạt của code bằng cách đơn giản hóa mối quan hệ giữa các components.
+
+Structural Patterns giải thích cách các class và object được kết hợp để tạo thành cấu trúc lớn hơn. Chúng cải thiện tính linh hoạt của code bằng cách đơn giản hóa mối quan hệ giữa các components.
+
+Tại sao cần Structural Patterns? Khi xây dựng hệ thống phức tạp, các vấn đề thường gặp:
+- Các interface không tương thích cần làm việc cùng nhau
+- Cần thêm chức năng mới cho đối tượng mà không thay đổi cấu trúc
+- Cần đơn giản hóa interface phức tạp
+- Cần tổ chức đối tượng theo cấu trúc cây
+- Cần kiểm soát truy cập đến đối tượng
+
+Structural Patterns giải quyết các vấn đề này bằng cách:
+- Kết nối các interface không tương thích (Adapter)
+- Thêm chức năng động cho đối tượng (Decorator)
+- Đơn giản hóa interface phức tạp (Facade)
+- Tổ chức đối tượng theo cấu trúc cây (Composite)
+- Kiểm soát truy cập (Proxy)
+- Tách abstraction khỏi implementation (Bridge)
+- Tối ưu bộ nhớ bằng cách chia sẻ dữ liệu (Flyweight)
+
+Các pattern trong nhóm này giúp xây dựng hệ thống linh hoạt, dễ mở rộng và bảo trì.
 
 ### 3. Behavioral Patterns (Nhóm hành vi)
-Định nghĩa cách các đối tượng giao tiếp và phân phối trách nhiệm. Giúp quản lý workflows, tương tác và ra quyết định trong hệ thống.
+
+Behavioral Patterns định nghĩa cách các đối tượng giao tiếp và phân phối trách nhiệm. Chúng giúp quản lý workflows, tương tác và ra quyết định trong hệ thống.
+
+Tại sao cần Behavioral Patterns? Trong hệ thống phức tạp, các vấn đề về giao tiếp và phân phối trách nhiệm thường xuất hiện:
+- Làm thế nào để các đối tượng thông báo thay đổi cho nhau?
+- Làm thế nào để chọn thuật toán phù hợp tại runtime?
+- Làm thế nào để đóng gói request và hỗ trợ undo/redo?
+- Làm thế nào để xử lý request qua một chuỗi handlers?
+- Làm thế nào để định nghĩa skeleton của thuật toán?
+
+Behavioral Patterns giải quyết các vấn đề này bằng cách:
+- Định nghĩa cách các đối tượng giao tiếp (Observer, Mediator)
+- Đóng gói thuật toán và cho phép thay đổi (Strategy, Command)
+- Quản lý trạng thái và hành vi (State, Memento)
+- Xử lý request qua chuỗi (Chain of Responsibility)
+- Định nghĩa skeleton thuật toán (Template Method)
+- Truy cập phần tử (Iterator, Visitor)
+
+Các pattern trong nhóm này giúp quản lý các tương tác phức tạp giữa các đối tượng một cách có tổ chức và dễ bảo trì.
 
 ---
 
@@ -102,9 +172,15 @@ GoF đã định nghĩa 23 design patterns cơ bản, được chia thành 3 nh�
 
 ### Tầm quan trọng
 
-- Nền tảng cho việc học và áp dụng design patterns
-- Được sử dụng rộng rãi trong các framework và thư viện
-- Cung cấp ngôn ngữ chung cho cộng đồng developers
+Cuốn sách của GoF có tầm quan trọng đặc biệt vì:
+
+**Nền tảng cho việc học và áp dụng design patterns**: Đây là cuốn sách đầu tiên hệ thống hóa và đặt tên cho các design patterns. Nó cung cấp nền tảng vững chắc cho việc hiểu và áp dụng patterns trong thực tế. Tất cả các tài liệu và khóa học về design patterns đều tham khảo từ cuốn sách này.
+
+**Được sử dụng rộng rãi trong các framework và thư viện**: Các pattern được mô tả trong cuốn sách đã được áp dụng rộng rãi trong các framework và thư viện phổ biến. Ví dụ, Spring Framework sử dụng nhiều pattern như Dependency Injection (dựa trên Factory và Strategy), Proxy, Template Method. Java Collections Framework sử dụng Iterator Pattern. Hiểu các pattern này giúp developers hiểu cách các framework hoạt động.
+
+**Cung cấp ngôn ngữ chung cho cộng đồng developers**: Trước khi có cuốn sách này, mỗi developer có thể giải quyết cùng một vấn đề theo cách khác nhau và gọi tên khác nhau. Cuốn sách đã tạo ra một ngôn ngữ chung, giúp developers có thể giao tiếp hiệu quả về các giải pháp thiết kế. Khi một developer nói "sử dụng Observer Pattern", tất cả developers khác đều hiểu ý định và cách triển khai.
+
+**Ảnh hưởng đến cách suy nghĩ về thiết kế phần mềm**: Cuốn sách không chỉ cung cấp các pattern cụ thể mà còn dạy cách suy nghĩ về thiết kế phần mềm. Nó giúp developers nhận ra các pattern trong code hiện có và áp dụng chúng một cách có ý thức.
 
 ---
 
@@ -113,32 +189,171 @@ GoF đã định nghĩa 23 design patterns cơ bản, được chia thành 3 nh�
 Các Creational Design Patterns xử lý việc tạo đối tượng một cách linh hoạt và hiệu quả. Chúng giúp bạn kiểm soát cách và thời điểm các đối tượng được khởi tạo.
 
 ### 1. Singleton Pattern
+
 **Mục đích**: Đảm bảo một class chỉ có một instance duy nhất và cung cấp điểm truy cập toàn cục đến instance đó.
 
-**Nội dung cần cover**:
-- Khái niệm và lý thuyết
-- Các cách implement (Eager, Lazy, Thread-safe, Enum)
-- Khi nào nên dùng và không nên dùng
-- Use cases thực tế (Logger, Configuration, Database Connection)
-- So sánh với các pattern khác
-- Ưu điểm và nhược điểm
-- Các sai lầm phổ biến (anti-patterns)
-- Performance considerations
-- Alternatives (Dependency Injection)
+**Khái niệm và lý thuyết**:
+
+Singleton Pattern đảm bảo rằng một class chỉ có một instance duy nhất trong toàn bộ ứng dụng và cung cấp một cách toàn cục để truy cập instance đó. Pattern này hữu ích khi bạn cần kiểm soát việc truy cập đến một tài nguyên được chia sẻ, như database connection, logger, hoặc configuration object.
+
+Tại sao cần Singleton? Trong một số trường hợp, việc có nhiều instance của một class có thể gây ra vấn đề:
+- Tốn kém tài nguyên: Một số đối tượng tốn kém để tạo (như database connection)
+- Xung đột: Nhiều instance có thể gây xung đột (như file system access)
+- State management: Cần một instance duy nhất để quản lý state toàn cục
+
+**Cơ chế hoạt động**:
+
+Singleton Pattern hoạt động bằng cách:
+1. Private constructor: Ngăn việc tạo instance từ bên ngoài bằng toán tử `new`
+2. Static instance: Lưu trữ instance duy nhất như một biến static
+3. Static factory method: Cung cấp method public static để truy cập instance
+
+**Các cách implement**:
+
+1. **Eager Initialization**: Instance được tạo ngay khi class được load vào memory. Ưu điểm là đơn giản và thread-safe tự nhiên. Nhược điểm là instance được tạo ngay cả khi không sử dụng, tốn memory.
+
+2. **Lazy Initialization**: Instance chỉ được tạo khi lần đầu tiên được yêu cầu. Ưu điểm là tiết kiệm memory. Nhược điểm là cần xử lý thread-safety nếu sử dụng trong môi trường đa luồng.
+
+3. **Thread-safe với synchronized**: Sử dụng synchronized để đảm bảo thread-safety. Nhược điểm là chậm hơn vì mỗi lần truy cập đều phải lock.
+
+4. **Double-Checked Locking**: Kiểm tra null hai lần, chỉ lock khi cần thiết. Hiệu quả hơn nhưng phức tạp hơn và cần sử dụng `volatile` keyword.
+
+5. **Enum Singleton**: Sử dụng enum trong Java. Đây là cách được khuyến nghị nhất vì thread-safe tự nhiên, serialization-safe, và reflection-safe.
+
+**Khi nào nên dùng**:
+
+- Khi cần đảm bảo chỉ có một instance (database connection, logger, cache)
+- Khi instance cần được truy cập toàn cục
+- Khi việc tạo instance tốn kém và cần được kiểm soát
+- Khi cần quản lý state toàn cục (configuration, registry)
+
+**Khi nào không nên dùng**:
+
+- Khi cần test: Singleton khó test vì global state
+- Khi cần dependency injection: Singleton vi phạm Dependency Inversion Principle
+- Khi cần nhiều instance với cấu hình khác nhau
+- Trong môi trường distributed: Singleton không work trong distributed systems
+
+**Use cases thực tế**:
+
+- **Logger**: Một ứng dụng chỉ cần một logger instance để ghi log
+- **Configuration**: Một instance để quản lý cấu hình toàn cục
+- **Database Connection**: Một connection pool manager
+- **Cache**: Một cache manager toàn cục
+- **Thread Pool**: Một thread pool manager
+
+**So sánh với các pattern khác**:
+
+- **vs Factory**: Factory tạo nhiều instances, Singleton chỉ một instance
+- **vs Object Pool**: Object Pool quản lý pool các objects, Singleton chỉ một instance
+- **vs Dependency Injection**: DI tốt hơn cho testability và flexibility
+
+**Ưu điểm**:
+- Đảm bảo chỉ có một instance
+- Tiết kiệm memory
+- Truy cập toàn cục dễ dàng
+- Lazy initialization có thể tiết kiệm tài nguyên
+
+**Nhược điểm**:
+- Khó test vì global state
+- Vi phạm Single Responsibility Principle
+- Thread-safety phức tạp
+- Hidden dependencies
+- Khó mở rộng và kế thừa
+
+**Các sai lầm phổ biến**:
+
+1. **Không thread-safe**: Trong môi trường đa luồng, có thể tạo nhiều instances
+2. **Synchronized method chậm**: Synchronized method chậm hơn double-checked locking
+3. **Reflection attack**: Có thể tạo instance mới bằng reflection nếu không có protection
+4. **Serialization attack**: Có thể tạo instance mới khi deserialize nếu không implement readResolve()
+
+**Performance considerations**:
+
+- Eager initialization: Nhanh khi truy cập nhưng tốn memory ngay từ đầu
+- Lazy initialization: Tiết kiệm memory nhưng có overhead khi check null
+- Double-checked locking: Tối ưu nhất cho performance
+- Enum: Không có overhead, được JVM tối ưu
+
+**Alternatives**:
+
+- **Dependency Injection**: Sử dụng DI container (Spring, Guice) để quản lý lifecycle. Tốt hơn cho testability và flexibility.
+- **Factory Pattern**: Sử dụng Factory để tạo và quản lý instances
+- **Service Locator**: Sử dụng Service Locator pattern (ít được khuyến nghị)
 
 ### 2. Factory Method Pattern
+
 **Mục đích**: Tạo đối tượng mà không cần chỉ định class cụ thể. Ủy thác việc khởi tạo cho các subclass.
 
-**Nội dung cần cover**:
-- Khái niệm và lý thuyết
-- Cơ chế hoạt động (Product, Creator, Concrete Products/Creators)
-- So sánh Simple Factory vs Factory Method
-- Khi nào nên dùng
-- Use cases (Document creation, UI components, Database connections)
-- So sánh với Abstract Factory và Builder
-- Ưu điểm và nhược điểm
-- Các sai lầm phổ biến
-- Best practices
+**Khái niệm và lý thuyết**:
+
+Factory Method Pattern định nghĩa một interface để tạo đối tượng, nhưng để các subclass quyết định class nào sẽ được instantiate. Pattern này cho phép một class defer việc khởi tạo đến các subclass.
+
+Tại sao cần Factory Method? Khi sử dụng `new` trực tiếp, code phụ thuộc vào class cụ thể. Điều này vi phạm Dependency Inversion Principle và làm cho code khó thay đổi. Factory Method giải quyết vấn đề này bằng cách:
+- Tách logic tạo đối tượng khỏi business logic
+- Cho phép thay đổi class được tạo mà không cần sửa code client
+- Tuân theo Open/Closed Principle: mở để mở rộng, đóng để sửa đổi
+
+**Cơ chế hoạt động**:
+
+Factory Method Pattern bao gồm các thành phần:
+- **Product**: Interface hoặc abstract class định nghĩa đối tượng được tạo
+- **Concrete Products**: Các implementation cụ thể của Product
+- **Creator**: Abstract class hoặc interface với factory method
+- **Concrete Creators**: Các subclass implement factory method để tạo Concrete Products
+
+Cách hoạt động: Client sử dụng Creator, Creator sử dụng factory method để tạo Product. Mỗi Concrete Creator quyết định Product nào được tạo.
+
+**So sánh Simple Factory vs Factory Method**:
+
+- **Simple Factory**: Một factory class tạo tất cả products. Đơn giản nhưng vi phạm Open/Closed Principle khi thêm product mới.
+- **Factory Method**: Mỗi product có factory method riêng trong creator. Phức tạp hơn nhưng tuân theo Open/Closed Principle.
+
+**Khi nào nên dùng**:
+
+- Khi không biết trước class cụ thể nào sẽ được tạo
+- Khi muốn tách logic tạo đối tượng khỏi business logic
+- Khi muốn cho phép subclass quyết định object nào được tạo
+- Khi logic tạo đối tượng phức tạp
+
+**Use cases**:
+
+- **Document creation**: Tạo Word, PDF, Excel documents dựa trên type
+- **UI components**: Tạo buttons, dialogs dựa trên platform (Windows, Mac, Linux)
+- **Database connections**: Tạo MySQL, PostgreSQL connections dựa trên configuration
+- **Game development**: Tạo enemies, weapons dựa trên level
+
+**So sánh với các pattern khác**:
+
+- **vs Abstract Factory**: Factory Method tạo một loại object, Abstract Factory tạo families of related objects
+- **vs Builder**: Factory Method tập trung vào creation, Builder tập trung vào construction từng bước
+- **vs Simple Factory**: Factory Method sử dụng inheritance, Simple Factory sử dụng composition
+
+**Ưu điểm**:
+- Loose coupling: Client không phụ thuộc vào concrete classes
+- Single Responsibility: Tách creation logic
+- Open/Closed Principle: Dễ thêm product mới
+- Centralized creation logic
+
+**Nhược điểm**:
+- Tăng complexity: Thêm abstraction layer
+- Có thể over-engineering cho simple cases
+- Cần maintain factory khi thêm product mới
+
+**Các sai lầm phổ biến**:
+
+1. **God Factory**: Một factory làm quá nhiều việc, vi phạm Single Responsibility Principle
+2. **Không validate input**: Không kiểm tra type hợp lệ trước khi tạo
+3. **Hard-coded strings**: Sử dụng magic strings thay vì enum hoặc constants
+4. **Tạo instance mỗi lần**: Không cache hoặc reuse instances khi có thể
+
+**Best practices**:
+
+- Sử dụng enum thay vì strings cho type safety
+- Validate input và throw meaningful exceptions
+- Document các types được support
+- Factory methods nên return interfaces, không phải concrete classes
+- Kết hợp với Dependency Injection frameworks khi có thể
 
 ### 3. Abstract Factory Pattern
 **Mục đích**: Cung cấp interface để tạo families of related objects mà không chỉ định concrete classes.
@@ -313,32 +528,171 @@ Structural patterns giải thích cách các class và object được kết h�
 Behavioral patterns định nghĩa cách các đối tượng giao tiếp và phân phối trách nhiệm. Chúng giúp quản lý workflows, tương tác và ra quyết định trong hệ thống.
 
 ### 1. Observer Pattern
+
 **Mục đích**: Định nghĩa dependency một-nhiều giữa các đối tượng. Khi một đối tượng thay đổi trạng thái, tất cả dependents được thông báo và cập nhật tự động.
 
-**Nội dung cần cover**:
-- Khái niệm và lý thuyết
-- Cơ chế hoạt động (Subject, Observer, Concrete Subject, Concrete Observer)
-- Push vs Pull model
-- Khi nào nên dùng
-- Use cases (Event handling, MVC architecture, Model updates)
-- So sánh với Mediator, Chain of Responsibility
-- Ưu điểm và nhược điểm
-- Java Observable và Observer (deprecated)
-- Modern implementations (Java 9+)
-- Best practices
+**Khái niệm và lý thuyết**:
+
+Observer Pattern là một trong những pattern được sử dụng nhiều nhất. Nó định nghĩa một dependency một-nhiều giữa objects, trong đó khi một object (subject) thay đổi trạng thái, tất cả các objects phụ thuộc (observers) được thông báo và cập nhật tự động.
+
+Tại sao cần Observer Pattern? Trong nhiều tình huống, bạn cần một số objects phản ứng với thay đổi của một object khác:
+- UI components cần cập nhật khi data model thay đổi
+- Event handling trong GUI applications
+- Model-View separation trong MVC architecture
+- Publish-Subscribe systems
+
+Observer Pattern giải quyết vấn đề này bằng cách tách subject và observers, cho phép thêm hoặc xóa observers mà không ảnh hưởng đến subject.
+
+**Cơ chế hoạt động**:
+
+Observer Pattern bao gồm:
+- **Subject**: Object có state và quản lý danh sách observers. Cung cấp methods để attach, detach, và notify observers.
+- **Observer**: Interface định nghĩa method update() được gọi khi subject thay đổi
+- **Concrete Subject**: Implementation cụ thể của Subject, lưu trữ state và notify observers khi state thay đổi
+- **Concrete Observer**: Implementation cụ thể của Observer, phản ứng với thay đổi của subject
+
+Flow: Subject thay đổi state → gọi notifyObservers() → tất cả observers nhận được thông báo → mỗi observer cập nhật theo cách riêng.
+
+**Push vs Pull model**:
+
+- **Push model**: Subject gửi tất cả thông tin cần thiết cho observer trong method update(). Observer nhận thông tin và xử lý. Ưu điểm: Observer không cần query subject. Nhược điểm: Subject phải biết observer cần gì.
+- **Pull model**: Subject chỉ thông báo rằng có thay đổi, observer tự query subject để lấy thông tin cần thiết. Ưu điểm: Subject không cần biết observer cần gì. Nhược điểm: Observer phải có reference đến subject.
+
+**Khi nào nên dùng**:
+
+- Khi một object thay đổi và nhiều objects khác cần được thông báo
+- Khi muốn tách coupling giữa subject và observers
+- Khi số lượng observers không biết trước hoặc thay đổi động
+- Trong event-driven architectures
+
+**Use cases**:
+
+- **Event handling**: GUI frameworks (Swing, JavaFX) sử dụng Observer cho event handling
+- **MVC architecture**: Model (subject) thay đổi, Views (observers) được thông báo để cập nhật
+- **Model updates**: Khi business model thay đổi, UI components tự động cập nhật
+- **Stock market**: Stock prices thay đổi, multiple displays cập nhật
+- **Publish-Subscribe systems**: Message queues, event buses
+
+**So sánh với các pattern khác**:
+
+- **vs Mediator**: Observer là one-to-many, Mediator là many-to-many. Observer subject không biết observers, Mediator biết tất cả colleagues.
+- **vs Chain of Responsibility**: Observer notify tất cả, Chain of Responsibility chỉ một handler xử lý.
+- **vs Pub/Sub**: Observer là synchronous, Pub/Sub thường là asynchronous với message broker.
+
+**Ưu điểm**:
+- Loose coupling: Subject không biết observers cụ thể
+- Dynamic relationships: Có thể thêm/xóa observers tại runtime
+- Broadcast communication: Một thay đổi có thể notify nhiều observers
+- Open/Closed Principle: Dễ thêm observer mới
+
+**Nhược điểm**:
+- Unexpected updates: Observers có thể nhận update không mong muốn
+- Order of notifications: Khó đảm bảo thứ tự notifications
+- Memory leaks: Nếu không detach observers đúng cách
+- Performance: Nếu có quá nhiều observers
+
+**Java Observable và Observer (deprecated)**:
+
+Java cung cấp `java.util.Observable` và `java.util.Observer` nhưng đã bị deprecated từ Java 9 vì:
+- Không thread-safe
+- Không thể extend từ class khác (vì Observable là class, không phải interface)
+- Không linh hoạt
+
+**Modern implementations (Java 9+)**:
+
+- **PropertyChangeListener**: Sử dụng PropertyChangeSupport cho JavaBeans
+- **Reactive Streams**: Sử dụng Flow API (Publisher, Subscriber)
+- **Custom implementation**: Implement Observer Pattern từ đầu với interfaces
+- **Event Bus**: Sử dụng libraries như Guava EventBus, Spring Events
+
+**Best practices**:
+
+- Sử dụng interfaces thay vì concrete classes
+- Implement thread-safety nếu cần
+- Cung cấp cách unsubscribe để tránh memory leaks
+- Xem xét sử dụng modern alternatives (Reactive Streams, Event Bus)
+- Document order of notifications nếu quan trọng
 
 ### 2. Strategy Pattern
+
 **Mục đích**: Định nghĩa một họ các thuật toán, đóng gói từng thuật toán và làm cho chúng có thể thay thế lẫn nhau. Strategy cho phép algorithm thay đổi độc lập với clients sử dụng nó.
 
-**Nội dung cần cover**:
-- Khái niệm và lý thuyết
-- Cơ chế hoạt động (Strategy, Concrete Strategies, Context)
-- Khi nào nên dùng
-- Use cases (Sorting algorithms, Payment methods, Compression algorithms)
-- So sánh với State, Template Method, Command
-- Ưu điểm và nhược điểm
-- Strategy với Lambda expressions (Java 8+)
-- Best practices
+**Khái niệm và lý thuyết**:
+
+Strategy Pattern cho phép bạn định nghĩa một family các thuật toán, đóng gói mỗi thuật toán, và làm cho chúng có thể thay thế lẫn nhau. Strategy cho phép algorithm thay đổi độc lập với clients sử dụng nó.
+
+Tại sao cần Strategy Pattern? Khi bạn có nhiều cách để thực hiện một task và muốn chọn cách nào tại runtime:
+- Nhiều thuật toán sắp xếp (QuickSort, MergeSort, BubbleSort)
+- Nhiều phương thức thanh toán (Credit Card, PayPal, Bank Transfer)
+- Nhiều cách nén dữ liệu (ZIP, RAR, 7Z)
+
+Thay vì sử dụng if-else hoặc switch-case (vi phạm Open/Closed Principle), Strategy Pattern cho phép:
+- Tách mỗi thuật toán vào class riêng
+- Cho phép thay đổi thuật toán tại runtime
+- Tuân theo Open/Closed Principle: mở để thêm strategy mới, đóng để sửa code hiện có
+
+**Cơ chế hoạt động**:
+
+Strategy Pattern bao gồm:
+- **Strategy**: Interface định nghĩa method thực thi thuật toán
+- **Concrete Strategies**: Các implementation cụ thể của Strategy, mỗi cái implement một thuật toán
+- **Context**: Class sử dụng Strategy, giữ reference đến Strategy object và gọi method của nó
+
+Flow: Client tạo Context với một Concrete Strategy → Context sử dụng Strategy để thực thi task → Có thể thay đổi Strategy tại runtime.
+
+**Khi nào nên dùng**:
+
+- Khi có nhiều cách để thực hiện một task và muốn chọn tại runtime
+- Khi muốn tránh if-else hoặc switch-case phức tạp cho việc chọn thuật toán
+- Khi muốn tách logic thuật toán khỏi class sử dụng nó
+- Khi các thuật toán có thể được thay thế lẫn nhau
+
+**Use cases**:
+
+- **Sorting algorithms**: Chọn QuickSort, MergeSort, hoặc BubbleSort
+- **Payment methods**: Chọn Credit Card, PayPal, hoặc Bank Transfer
+- **Compression algorithms**: Chọn ZIP, RAR, hoặc 7Z
+- **Validation strategies**: Chọn different validation rules
+- **Discount calculation**: Chọn percentage, fixed amount, hoặc buy-one-get-one
+
+**So sánh với các pattern khác**:
+
+- **vs State**: Strategy thay đổi behavior dựa trên algorithm được chọn, State thay đổi behavior dựa trên internal state. Strategy là external, State là internal.
+- **vs Template Method**: Strategy sử dụng composition, Template Method sử dụng inheritance. Strategy cho phép thay đổi toàn bộ algorithm, Template Method chỉ thay đổi một số steps.
+- **vs Command**: Strategy tập trung vào algorithm, Command tập trung vào request encapsulation.
+
+**Ưu điểm**:
+- Tách logic thuật toán khỏi context
+- Dễ thêm strategy mới (Open/Closed Principle)
+- Loại bỏ conditional statements phức tạp
+- Có thể thay đổi strategy tại runtime
+- Mỗi strategy có thể test độc lập
+
+**Nhược điểm**:
+- Tăng số lượng classes
+- Client phải biết các strategies khác nhau
+- Overhead của việc tạo strategy objects
+- Có thể over-engineering cho simple cases
+
+**Strategy với Lambda expressions (Java 8+)**:
+
+Với Java 8+, Strategy Pattern có thể được implement đơn giản hơn bằng lambda expressions và functional interfaces:
+
+```java
+// Thay vì tạo class cho mỗi strategy
+context.setStrategy(x -> x * 2); // Double strategy
+context.setStrategy(x -> x + 10); // Add strategy
+```
+
+Điều này giảm boilerplate code nhưng chỉ phù hợp cho strategies đơn giản. Với strategies phức tạp, vẫn nên sử dụng classes.
+
+**Best practices**:
+
+- Sử dụng Strategy khi có nhiều algorithms có thể thay thế
+- Đảm bảo tất cả strategies implement cùng interface
+- Xem xét sử dụng lambda cho simple strategies (Java 8+)
+- Document behavior của mỗi strategy
+- Có thể kết hợp với Factory để tạo strategies
 
 ### 3. Command Pattern
 **Mục đích**: Đóng gói một request như một đối tượng, cho phép parameterize clients với các request khác nhau, queue requests, và hỗ trợ undo operations.
@@ -466,31 +820,209 @@ Behavioral patterns định nghĩa cách các đối tượng giao tiếp và ph
 Advanced topics bao gồm các nguyên tắc kiến trúc và khái niệm thiết kế hệ thống sâu hơn. Chúng giúp bạn xây dựng các hệ thống phần mềm cấp enterprise, có thể mở rộng và mạnh mẽ.
 
 ### 1. SOLID Principles
+
 **Mục đích**: Năm nguyên tắc thiết kế hướng đối tượng giúp tạo ra code dễ bảo trì, mở rộng và test.
 
-**Nội dung cần cover**:
-- **S - Single Responsibility Principle**: Một class chỉ nên có một lý do để thay đổi
-- **O - Open/Closed Principle**: Mở để mở rộng, đóng để sửa đổi
-- **L - Liskov Substitution Principle**: Objects của superclass có thể được thay thế bằng objects của subclass
-- **I - Interface Segregation Principle**: Clients không nên phụ thuộc vào interfaces mà họ không sử dụng
-- **D - Dependency Inversion Principle**: Phụ thuộc vào abstractions, không phụ thuộc vào concretions
-- Ví dụ vi phạm và cách sửa
-- Mối quan hệ với Design Patterns
-- Best practices
+SOLID là viết tắt của năm nguyên tắc được đặt tên bởi Robert C. Martin (Uncle Bob). Các nguyên tắc này giúp developers viết code sạch, dễ bảo trì và mở rộng.
+
+**S - Single Responsibility Principle (Nguyên tắc Trách nhiệm Đơn nhất)**:
+
+Một class chỉ nên có một lý do để thay đổi. Nói cách khác, một class chỉ nên có một trách nhiệm duy nhất.
+
+Tại sao quan trọng? Khi một class có nhiều trách nhiệm:
+- Khó hiểu và maintain
+- Thay đổi một trách nhiệm có thể ảnh hưởng đến trách nhiệm khác
+- Khó test vì phải test nhiều behaviors
+- Vi phạm cohesion (gắn kết)
+
+Ví dụ vi phạm: Class `User` vừa quản lý user data, vừa gửi email, vừa validate. Nếu thay đổi cách gửi email, phải sửa class User.
+
+Cách sửa: Tách thành `User` (quản lý data), `EmailService` (gửi email), `UserValidator` (validate).
+
+**O - Open/Closed Principle (Nguyên tắc Mở/Đóng)**:
+
+Software entities (classes, modules, functions) nên mở để mở rộng nhưng đóng để sửa đổi.
+
+Tại sao quan trọng? Khi cần thêm tính năng mới:
+- Không nên sửa code hiện có (có thể gây bugs)
+- Nên mở rộng thông qua inheritance hoặc composition
+- Giảm risk khi thay đổi code đã test
+
+Ví dụ vi phạm: Class `AreaCalculator` có method tính diện tích với if-else cho từng hình. Thêm hình mới phải sửa method này.
+
+Cách sửa: Sử dụng Strategy Pattern hoặc polymorphism. Tạo interface `Shape` với method `calculateArea()`, mỗi hình implement interface này.
+
+**L - Liskov Substitution Principle (Nguyên tắc Thay thế Liskov)**:
+
+Objects của superclass có thể được thay thế bằng objects của subclass mà không làm thay đổi tính đúng đắn của chương trình.
+
+Tại sao quan trọng? Đảm bảo rằng inheritance được sử dụng đúng cách:
+- Subclass không nên làm yếu preconditions của superclass
+- Subclass không nên làm mạnh postconditions của superclass
+- Subclass phải có thể thay thế superclass trong mọi context
+
+Ví dụ vi phạm: Class `Rectangle` có method `setWidth()` và `setHeight()`. Class `Square` extends `Rectangle` nhưng override để đảm bảo width = height. Điều này vi phạm LSP vì code expect Rectangle có thể set width và height độc lập.
+
+Cách sửa: Không nên để Square extends Rectangle. Tạo interface `Shape` và cả hai implement nó.
+
+**I - Interface Segregation Principle (Nguyên tắc Phân tách Interface)**:
+
+Clients không nên phụ thuộc vào interfaces mà họ không sử dụng. Thay vì một interface lớn, nên có nhiều interfaces nhỏ, specific.
+
+Tại sao quan trọng? Khi một interface quá lớn:
+- Clients phải implement methods không cần thiết
+- Thay đổi interface ảnh hưởng đến tất cả clients
+- Vi phạm Single Responsibility Principle
+
+Ví dụ vi phạm: Interface `Worker` có methods `work()`, `eat()`, `sleep()`. Class `Robot` implement Worker nhưng không cần eat() và sleep().
+
+Cách sửa: Tách thành `Workable`, `Eatable`, `Sleepable`. Robot chỉ implement Workable.
+
+**D - Dependency Inversion Principle (Nguyên tắc Đảo ngược Phụ thuộc)**:
+
+High-level modules không nên phụ thuộc vào low-level modules. Cả hai nên phụ thuộc vào abstractions. Abstractions không nên phụ thuộc vào details. Details nên phụ thuộc vào abstractions.
+
+Tại sao quan trọng? Giảm coupling và tăng flexibility:
+- High-level modules không phụ thuộc vào implementation cụ thể
+- Dễ dàng thay đổi implementation
+- Dễ test bằng cách mock dependencies
+
+Ví dụ vi phạm: Class `EmailService` phụ thuộc trực tiếp vào `SmtpClient`. Nếu muốn đổi sang API khác, phải sửa EmailService.
+
+Cách sửa: Tạo interface `EmailProvider`, `SmtpClient` implement nó. `EmailService` phụ thuộc vào `EmailProvider` interface.
+
+**Ví dụ vi phạm và cách sửa**:
+
+Một class vi phạm nhiều nguyên tắc SOLID thường có các đặc điểm:
+- Quá nhiều methods và responsibilities
+- Hard dependencies vào concrete classes
+- Khó test và maintain
+- Khó mở rộng
+
+Cách sửa: Áp dụng các Design Patterns phù hợp:
+- Factory Pattern cho DIP
+- Strategy Pattern cho OCP
+- Adapter Pattern cho interface compatibility
+- Decorator Pattern cho extending functionality
+
+**Mối quan hệ với Design Patterns**:
+
+Design Patterns giúp implement SOLID Principles:
+- **Factory Pattern**: Implement DIP và OCP
+- **Strategy Pattern**: Implement OCP
+- **Observer Pattern**: Implement DIP
+- **Adapter Pattern**: Implement ISP
+- **Template Method**: Implement OCP và LSP
+
+**Best practices**:
+
+- Luôn nghĩ về SOLID khi thiết kế classes
+- Refactor code vi phạm SOLID
+- Sử dụng Design Patterns để implement SOLID
+- Review code với SOLID principles
+- Không over-apply: Đôi khi vi phạm nhỏ là acceptable
 
 ### 2. Dependency Injection Pattern
+
 **Mục đích**: Một kỹ thuật của Inversion of Control (IoC) trong đó dependencies được cung cấp cho một đối tượng thay vì đối tượng tự tạo chúng.
 
-**Nội dung cần cover**:
-- Khái niệm và lý thuyết
-- Inversion of Control (IoC) vs Dependency Injection
-- Các loại DI (Constructor, Setter, Field, Interface)
-- Khi nào nên dùng
-- Use cases (Testing, Loose coupling, Framework integration)
-- So sánh với Service Locator
-- Ưu điểm và nhược điểm
-- DI Containers (Spring, Guice)
-- Best practices
+**Khái niệm và lý thuyết**:
+
+Dependency Injection (DI) là một kỹ thuật implement Inversion of Control (IoC), trong đó dependencies của một object được cung cấp từ bên ngoài thay vì object tự tạo chúng.
+
+Tại sao cần Dependency Injection? Khi một class tự tạo dependencies:
+- Tight coupling: Class phụ thuộc vào implementation cụ thể
+- Khó test: Không thể mock dependencies
+- Vi phạm Dependency Inversion Principle
+- Khó thay đổi implementation
+
+Ví dụ vi phạm: `UserService` tự tạo `EmailService` và `DatabaseService`. Khó test và thay đổi.
+
+Cách sửa: Inject `EmailService` và `DatabaseService` vào constructor của `UserService`.
+
+**Inversion of Control (IoC) vs Dependency Injection**:
+
+- **IoC**: Nguyên tắc tổng quát - control flow được đảo ngược. Framework kiểm soát flow thay vì application code.
+- **DI**: Một cách implement IoC - dependencies được inject vào object thay vì object tự tạo.
+
+IoC có thể được implement bằng nhiều cách: DI, Service Locator, Template Method, Strategy Pattern. DI là cách phổ biến nhất.
+
+**Các loại DI**:
+
+1. **Constructor Injection**: Dependencies được inject qua constructor. Được khuyến nghị nhất vì:
+   - Đảm bảo object được tạo với tất cả dependencies
+   - Immutable (nếu sử dụng final)
+   - Dễ test
+
+2. **Setter Injection**: Dependencies được inject qua setter methods. Phù hợp khi:
+   - Dependencies là optional
+   - Cần thay đổi dependencies sau khi tạo object
+
+3. **Field Injection**: Dependencies được inject trực tiếp vào fields (thường dùng annotations). Không được khuyến nghị vì:
+   - Khó test (phải dùng reflection)
+   - Ẩn dependencies
+   - Không thể sử dụng final
+
+4. **Interface Injection**: Object implement interface để nhận dependencies. Ít được sử dụng.
+
+**Khi nào nên dùng**:
+
+- Khi muốn giảm coupling giữa classes
+- Khi cần test code (có thể mock dependencies)
+- Khi muốn thay đổi implementation dễ dàng
+- Trong framework-based applications (Spring, Guice)
+
+**Use cases**:
+
+- **Testing**: Mock dependencies để test unit
+- **Loose coupling**: Giảm phụ thuộc giữa components
+- **Framework integration**: Spring, Guice sử dụng DI
+- **Configuration**: Thay đổi behavior thông qua configuration
+
+**So sánh với Service Locator**:
+
+- **Dependency Injection**: Dependencies được cung cấp cho object. Object không biết cách lấy dependencies.
+- **Service Locator**: Object tự tìm dependencies từ Service Locator. Object biết về Service Locator.
+
+DI được khuyến nghị hơn vì:
+- Dependencies rõ ràng (visible trong constructor)
+- Dễ test hơn
+- Tuân theo Dependency Inversion Principle tốt hơn
+
+**Ưu điểm**:
+- Loose coupling
+- Dễ test (có thể mock)
+- Tuân theo SOLID principles
+- Flexible và maintainable
+- Dependencies rõ ràng
+
+**Nhược điểm**:
+- Tăng complexity ban đầu
+- Cần DI container hoặc manual wiring
+- Có thể over-engineering cho simple cases
+- Learning curve cho developers mới
+
+**DI Containers (Spring, Guice)**:
+
+DI Containers quản lý lifecycle và dependencies:
+- **Spring Framework**: Sử dụng annotations (@Autowired, @Component) hoặc XML configuration
+- **Google Guice**: Sử dụng annotations và modules
+- **Dagger**: Compile-time DI cho Android
+
+Containers tự động:
+- Tạo objects
+- Resolve dependencies
+- Manage lifecycle
+- Provide scoping (singleton, prototype, etc.)
+
+**Best practices**:
+
+- Ưu tiên Constructor Injection
+- Sử dụng interfaces cho dependencies
+- Tránh Field Injection
+- Sử dụng DI containers cho complex applications
+- Document dependencies
+- Không inject quá nhiều dependencies (có thể vi phạm SRP)
 
 ### 3. Composition vs Inheritance
 **Mục đích**: So sánh và hướng dẫn khi nào nên sử dụng composition thay vì inheritance.
@@ -792,48 +1324,221 @@ Các pattern tập trung vào functional programming paradigms và xử lý dữ
 
 Phần này chuẩn bị cho các câu hỏi phỏng vấn phổ biến về design patterns. Nó củng cố sự rõ ràng về khái niệm và giúp bạn giải thích patterns một cách tự tin.
 
-### Nội dung cần cover:
+### Câu hỏi cơ bản về Design Patterns
 
-1. **Câu hỏi cơ bản về Design Patterns**
-   - Design Pattern là gì?
-   - Tại sao sử dụng Design Patterns?
-   - Phân loại Design Patterns
-   - Sự khác biệt giữa Design Pattern và Framework
+**1. Design Pattern là gì?**
 
-2. **Câu hỏi về Creational Patterns**
-   - Singleton: Các cách implement, Thread-safety
-   - Factory vs Abstract Factory
-   - Builder vs Constructor
-   - Prototype: Shallow vs Deep copy
-   - Khi nào dùng pattern nào?
+Design Pattern là các giải pháp có thể tái sử dụng cho các vấn đề thiết kế phần mềm phổ biến. Chúng không phải là code cụ thể mà là các template hoặc mô tả cách giải quyết một vấn đề có thể áp dụng trong nhiều tình huống khác nhau.
 
-3. **Câu hỏi về Structural Patterns**
-   - Adapter vs Decorator vs Facade
-   - Proxy vs Decorator
-   - Composite: Khi nào dùng?
-   - Bridge: Tách abstraction khỏi implementation
+Design Patterns cung cấp:
+- Giải pháp đã được kiểm chứng
+- Best practices
+- Ngôn ngữ chung cho developers
+- Cấu trúc rõ ràng cho code
 
-4. **Câu hỏi về Behavioral Patterns**
-   - Observer vs Pub/Sub
-   - Strategy vs State
-   - Command: Undo/Redo implementation
-   - Chain of Responsibility: Use cases
-   - Template Method vs Strategy
+**2. Tại sao sử dụng Design Patterns?**
 
-5. **Câu hỏi về SOLID Principles**
-   - Giải thích từng nguyên tắc
-   - Ví dụ vi phạm và cách sửa
-   - Mối quan hệ với Design Patterns
+- Giải quyết vấn đề thiết kế phổ biến một cách hiệu quả
+- Cải thiện code quality (readability, maintainability, reusability)
+- Giảm coupling giữa components
+- Tăng khả năng mở rộng
+- Cung cấp từ vựng chung
+- Được sử dụng trong frameworks và libraries
+- Giảm bugs bằng cách tuân theo best practices
 
-6. **Câu hỏi thực tế**
-   - Design một hệ thống sử dụng patterns
-   - Refactor code sử dụng patterns
-   - So sánh các patterns cho use case cụ thể
+**3. Phân loại Design Patterns**
 
-7. **Câu hỏi nâng cao**
-   - Anti-patterns
-   - Performance considerations
-   - Testing với Design Patterns
+Design Patterns được phân loại thành 3 nhóm:
+- **Creational**: Tập trung vào cách tạo đối tượng (Singleton, Factory, Builder, etc.)
+- **Structural**: Tập trung vào cách kết hợp objects (Adapter, Decorator, Facade, etc.)
+- **Behavioral**: Tập trung vào cách objects giao tiếp (Observer, Strategy, Command, etc.)
+
+**4. Sự khác biệt giữa Design Pattern và Framework**
+
+- **Design Pattern**: Là giải pháp cho một vấn đề cụ thể, có thể implement theo nhiều cách khác nhau
+- **Framework**: Là một kiến trúc cụ thể với code implementation, cung cấp infrastructure cho ứng dụng
+
+Framework thường sử dụng nhiều Design Patterns. Ví dụ: Spring Framework sử dụng Dependency Injection, Factory Pattern, Proxy Pattern.
+
+### Câu hỏi về Creational Patterns
+
+**1. Singleton: Các cách implement và Thread-safety**
+
+Các cách implement Singleton:
+- Eager Initialization: Đơn giản, thread-safe tự nhiên nhưng tốn memory
+- Lazy Initialization: Tiết kiệm memory nhưng cần xử lý thread-safety
+- Thread-safe với synchronized: An toàn nhưng chậm
+- Double-Checked Locking: Hiệu quả, cần volatile keyword
+- Enum Singleton: Được khuyến nghị nhất trong Java
+
+Thread-safety quan trọng vì trong môi trường đa luồng, nhiều threads có thể tạo nhiều instances nếu không xử lý đúng.
+
+**2. Factory vs Abstract Factory**
+
+- **Factory Method**: Tạo một loại object. Mỗi concrete creator tạo một concrete product.
+- **Abstract Factory**: Tạo families of related objects. Một factory tạo nhiều related products.
+
+Ví dụ: Factory Method tạo Button (WindowsButton hoặc MacButton). Abstract Factory tạo cả Button và Dialog cùng theme (Windows hoặc Mac).
+
+**3. Builder vs Constructor**
+
+- **Constructor**: Đơn giản cho objects ít parameters. Khó đọc với nhiều parameters.
+- **Builder**: Tốt cho objects với nhiều parameters, optional parameters. Dễ đọc, type-safe, có thể tạo immutable objects.
+
+Builder Pattern phù hợp khi có nhiều hơn 4-5 parameters hoặc nhiều optional parameters.
+
+**4. Prototype: Shallow vs Deep copy**
+
+- **Shallow copy**: Chỉ copy references, không copy nested objects. Nhanh nhưng có thể gây side effects.
+- **Deep copy**: Copy tất cả nested objects. An toàn nhưng chậm hơn và tốn memory hơn.
+
+Chọn shallow copy khi nested objects là immutable hoặc không cần copy. Chọn deep copy khi cần độc lập hoàn toàn.
+
+**5. Khi nào dùng pattern nào?**
+
+- **Singleton**: Khi cần một instance duy nhất (Logger, Configuration)
+- **Factory**: Khi logic tạo object phức tạp hoặc cần quyết định tại runtime
+- **Builder**: Khi object có nhiều parameters hoặc optional parameters
+- **Prototype**: Khi việc tạo object tốn kém và cần clone
+- **Object Pool**: Khi objects đắt tiền và cần reuse
+
+### Câu hỏi về Structural Patterns
+
+**1. Adapter vs Decorator vs Facade**
+
+- **Adapter**: Chuyển đổi interface để làm cho incompatible classes làm việc cùng nhau. Không thay đổi behavior.
+- **Decorator**: Thêm behavior mới cho object. Có thể wrap nhiều decorators.
+- **Facade**: Đơn giản hóa interface phức tạp. Cung cấp interface đơn giản cho subsystem.
+
+**2. Proxy vs Decorator**
+
+- **Proxy**: Kiểm soát truy cập đến object. Có thể lazy load, access control, caching.
+- **Decorator**: Thêm behavior cho object. Tập trung vào functionality.
+
+Proxy thay thế object, Decorator wrap object để thêm behavior.
+
+**3. Composite: Khi nào dùng?**
+
+Khi cần tổ chức objects theo cấu trúc cây và xử lý chúng thống nhất. Ví dụ: File system (File và Folder), UI components (Button và Panel chứa Buttons).
+
+**4. Bridge: Tách abstraction khỏi implementation**
+
+Bridge Pattern tách abstraction (interface) khỏi implementation (concrete class) để chúng có thể thay đổi độc lập. Sử dụng composition thay vì inheritance.
+
+Ví dụ: Shape (abstraction) và DrawingAPI (implementation). Có thể thay đổi Shape hoặc DrawingAPI độc lập.
+
+### Câu hỏi về Behavioral Patterns
+
+**1. Observer vs Pub/Sub**
+
+- **Observer**: Synchronous, direct communication. Subject biết observers.
+- **Pub/Sub**: Asynchronous, thông qua message broker. Publisher và Subscriber không biết nhau.
+
+Observer phù hợp cho tight coupling, Pub/Sub phù hợp cho loose coupling và distributed systems.
+
+**2. Strategy vs State**
+
+- **Strategy**: Thay đổi behavior dựa trên algorithm được chọn (external). Context chọn strategy.
+- **State**: Thay đổi behavior dựa trên internal state. State object quản lý transitions.
+
+Strategy là về "how" (cách làm), State là về "when" (khi nào).
+
+**3. Command: Undo/Redo implementation**
+
+Command Pattern lưu trữ commands trong history. Mỗi command có execute() và undo(). Undo stack lưu commands đã execute, Redo stack lưu commands đã undo.
+
+**4. Chain of Responsibility: Use cases**
+
+- Exception handling: Mỗi handler xử lý một loại exception
+- Authentication/Authorization: Chain các validators
+- Event processing: Process events qua middleware chain
+- Logging: Chain các log handlers
+
+**5. Template Method vs Strategy**
+
+- **Template Method**: Sử dụng inheritance, định nghĩa skeleton algorithm, subclass implement steps.
+- **Strategy**: Sử dụng composition, thay đổi toàn bộ algorithm.
+
+Template Method cho phép thay đổi một số steps, Strategy cho phép thay đổi toàn bộ algorithm.
+
+### Câu hỏi về SOLID Principles
+
+**1. Giải thích từng nguyên tắc**
+
+- **S - Single Responsibility**: Một class chỉ có một lý do để thay đổi
+- **O - Open/Closed**: Mở để mở rộng, đóng để sửa đổi
+- **L - Liskov Substitution**: Subclass có thể thay thế superclass
+- **I - Interface Segregation**: Clients không phụ thuộc vào interfaces không sử dụng
+- **D - Dependency Inversion**: Phụ thuộc vào abstractions, không phụ thuộc vào concretions
+
+**2. Ví dụ vi phạm và cách sửa**
+
+Ví dụ vi phạm SRP: Class `User` vừa quản lý data, vừa gửi email, vừa validate.
+Cách sửa: Tách thành `User`, `EmailService`, `UserValidator`.
+
+**3. Mối quan hệ với Design Patterns**
+
+Design Patterns giúp implement SOLID:
+- Factory Pattern implement DIP và OCP
+- Strategy Pattern implement OCP
+- Observer Pattern implement DIP
+- Adapter Pattern implement ISP
+
+### Câu hỏi thực tế
+
+**1. Design một hệ thống sử dụng patterns**
+
+Ví dụ: Design một hệ thống quản lý đơn hàng:
+- Repository Pattern cho data access
+- Factory Pattern cho tạo Order objects
+- Observer Pattern cho notify khi order status thay đổi
+- Strategy Pattern cho tính toán shipping cost
+- Facade Pattern cho đơn giản hóa API
+
+**2. Refactor code sử dụng patterns**
+
+Các bước:
+- Identify code smells (long methods, tight coupling, etc.)
+- Chọn pattern phù hợp
+- Refactor từng bước
+- Test sau mỗi bước
+- Đảm bảo không break existing functionality
+
+**3. So sánh các patterns cho use case cụ thể**
+
+Ví dụ: Cần thêm logging cho methods. Có thể dùng:
+- Decorator Pattern: Wrap methods với logging
+- AOP (Aspect-Oriented Programming): Intercept methods
+- Proxy Pattern: Proxy object với logging
+
+So sánh dựa trên: complexity, performance, maintainability, testability.
+
+### Câu hỏi nâng cao
+
+**1. Anti-patterns**
+
+Các anti-patterns phổ biến:
+- God Object: Một class làm quá nhiều việc
+- Spaghetti Code: Code không có cấu trúc
+- Golden Hammer: Sử dụng một pattern cho mọi vấn đề
+- Premature Optimization: Tối ưu quá sớm
+- Copy-Paste Programming: Copy code thay vì reuse
+
+**2. Performance considerations**
+
+- Singleton: Eager vs Lazy initialization
+- Factory: Có thể cache created objects
+- Observer: Có thể có performance issue với nhiều observers
+- Proxy: Overhead của proxy layer
+- Object Pool: Giảm object creation overhead
+
+**3. Testing với Design Patterns**
+
+- Dependency Injection giúp mock dependencies
+- Factory Pattern giúp tạo test objects
+- Strategy Pattern giúp test từng strategy độc lập
+- Observer Pattern cần test notification flow
+- Singleton khó test vì global state
 
 ---
 
@@ -916,7 +1621,7 @@ Phần này chuẩn bị cho các câu hỏi phỏng vấn phổ biến về des
 
 ---
 
-## 📚 Tài liệu tham khảo
+## Tài liệu tham khảo
 
 - **Gang of Four (GoF)**: "Design Patterns: Elements of Reusable Object-Oriented Software" (1994)
 - **Effective Java** by Joshua Bloch
@@ -927,7 +1632,7 @@ Phần này chuẩn bị cho các câu hỏi phỏng vấn phổ biến về des
 
 ---
 
-## 🎯 Hướng dẫn sử dụng tài liệu
+## Hướng dẫn sử dụng tài liệu
 
 Tài liệu này được tổ chức theo cấu trúc từ tổng quan đến chi tiết:
 
